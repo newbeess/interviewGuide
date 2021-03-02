@@ -7,7 +7,7 @@
 ## 数据结构
 ### 数组（Array）
 ### 链表（Linked List）
-### 堆栈（Stack）
+### 栈（Stack）
 ### 队列（Queue）
 ### 树（Tree）
 ### 图（Graph）
