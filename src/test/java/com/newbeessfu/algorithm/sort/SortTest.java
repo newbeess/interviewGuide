@@ -77,4 +77,13 @@ public class SortTest {
     sort.sort(arr);
     System.out.println("after:" + Arrays.toString(arr));
   }
+
+  @Test
+  public void HeapSort() {
+    Sort sort = new Heap();
+    System.out.println("before:" + Arrays.toString(arr));
+    sort.sort(arr);
+    System.out.println("after:" + Arrays.toString(arr));
+
+  }
 }
