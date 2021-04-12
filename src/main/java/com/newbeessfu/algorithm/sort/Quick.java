@@ -27,28 +27,28 @@ public class Quick implements Sort {
    */
   private int partition(long[] a, int lo, int hi) {
     long pivotValue = a[lo];
-    int i = lo, j = hi;
+    int i = lo, j = hi + 1;
 
-    while (i < j) {
-      while (i < j) {
-        if (a[i] < pivotValue) {
-          i++;
-        } else {
+    while (true) {
+      // 左->右，找到第一个大于pivot的位置或者hi
+      while (a[++i] < pivotValue) {
+        if (i == hi) {
           break;
         }
       }
-      while (i < j) {
-        if (a[j] > pivotValue) {
-          j--;
-        } else {
+      // 右->左，找到第一个小于pivot的位置或者lo
+      while (a[--j] > pivotValue) {
+        if (j == lo) {
           break;
         }
       }
       if (i >= j) {
         break;
       }
+      // 交换
       swap(a, i, j);
     }
-    return i;
+    swap(a, lo, j);
+    return j;
   }
 }
