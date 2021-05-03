@@ -88,4 +88,24 @@ public class SortTest {
     sort.sort(arr);
     System.out.println("after:" + Arrays.toString(arr));
   }
+
+  @Test
+  public void name() {
+    int reverse = reverse(-180);
+    System.out.println(reverse);
+  }
+
+  static int INT_MAX    =2147483647;
+  static int INT_MIN = -INT_MAX -1;
+  public int reverse(int x) {
+    int reverse = 0;
+    while (x != 0){
+      if(reverse > INT_MAX /10 || reverse < INT_MIN /10){
+        return 0;
+      }
+      reverse = reverse * 10 + x % 10;
+      x = x/10;
+    }
+    return reverse;
+  }
 }
